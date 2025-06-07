@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>honey gloss ✨ ur main character moment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.2) 0%, rgba(255, 218, 185, 0.2) 25%, rgba(221, 160, 221, 0.2) 50%, rgba(173, 216, 230, 0.2) 75%, rgba(255, 192, 203, 0.2) 100%);
+            min-height: 100vh;
+        }
+
+        /* Chunky beads background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+              radial-gradient(circle at 10% 20%, #FFB6C1 0%, transparent 20%),
+              radial-gradient(circle at 80% 30%, #FFE4B5 0%, transparent 18%),
+              radial-gradient(circle at 40% 70%, #DDA0DD 0%, transparent 22%),
+              radial-gradient(circle at 90% 60%, #ADD8E6 0%, transparent 19%),
+              radial-gradient(circle at 20% 80%, #FFC0CB 0%, transparent 21%);
+            background-size: 150px 150px, 120px 120px, 180px 180px, 140px 140px, 160px 160px;
+            opacity: 0.6; z-index: -1;
+            animation: floatBeads 20s ease-in-out infinite;
+        }
+        
+        @keyframes floatBeads {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FF6B9D, #C44569, #F8B500, #FF9FF3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-emoji {
+            font-size: 1.8rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .floating-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 25%; right: 15%; animation-delay: 1s; }
+        .floating-icon:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-20px) rotate(5deg) scale(1.05); }
+        }
+
+        .hero h1 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #FF6B9D, #4ECDC4, #45B7D1, #96CEB4, #FFEAA7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.3)); }
+            100% { filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.6)); }
+        }
+
+        .tagline {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            color: #8B5A3C;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 35px;
+            background: linear-gradient(135deg, #FF9A9E, #FECFEF);
+            border: none; border-radius: 50px;
+            color: #8B5A3C;
+            text-decoration: none;
+            font-weight: 700; font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 154, 158, 0.6);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, #FF6B9D, #C44569, #F8B500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #8B5A3C;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 245, 0.8));
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.25);
+        }
+
+        .card-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #C44569;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            color: #8B5A3C;
+            line-height: 1.6;
+        }
+
+        /* Showcase Styles */
+        .showcase-item {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .placeholder-img {
+            width: 100%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        .gradient-1 { background: linear-gradient(-45deg, #FFB6C1, #FFE4E1, #E6E6FA, #F0E68C); }
+        .gradient-2 { background: linear-gradient(-45deg, #FFE4E1, #DDA0DD, #98FB98, #F0E68C); }
+        .gradient-3 { background: linear-gradient(-45deg, #E6E6FA, #FFB6C1, #F0E68C, #98FB98); }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .img-emoji {
+            font-size: 4rem;
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+
+        .showcase-info {
+            padding: 1.5rem;
+        }
+
+        .showcase-vibe {
+            display: inline-block;
+            background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+            color: #C44569;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 107, 157, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 40px;
+            padding: 4rem 2rem;
+            color: white;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+        }
+
+        .footer-text {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: #C44569;
+            margin-bottom: 1rem;
+        }
+
+        .social-emojis {
+            font-size: 2rem;
+            letter-spacing: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero { padding: 6rem 1rem 4rem; }
+            .section { padding: 3rem 1rem; }
+            .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">honey gloss</div>
+            <div class="nav-emoji">🍯✨</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="floating-icon">🐰</div>
+        <div class="floating-icon">🌞</div>
+        <div class="floating-icon">🦋</div>
+        
+        <div>
+            <h1>ur main character era starts here ✨</h1>
+            <p class="tagline">custom jewelry that hits different 🌸💫</p>
+            <a href="#contact" class="cta-button">let's create magic together 🪩</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">why we're obsessed 🤍</h2>
+        <p class="section-subtitle">it's giving main character energy fr</p>
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-emoji">🎨</span>
+                <h3 class="card-title">made just for u</h3>
+                <p class="card-text">every piece is custom-crafted to match your exact vibe and aesthetic. no basic jewelry here bestie!</p>
+            </div>
+            <div class="card">
+                <span class="card-emoji">✨</span>
+                <h3 class="card-title">trendy af</h3>
+                <p class="card-text">we stay on top of all the latest jewelry trends so ur always serving looks that everyone's gonna be asking about</p>
+            </div>
+            <div class="card">
+                <span class="card-emoji">💫</span>
+                <h3 class="card-title">confidence boost</h3>
+                <p class="card-text">transform any basic fit into something that screams "that girl energy" - ur gonna feel unstoppable</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">the collection 💎</h2>
+        <p class="section-subtitle">pieces that are about to become ur signature look</p>
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-emoji">💎</span>
+                <h3 class="card-title">custom body jewelry</h3>
+                <p class="card-text">unique pieces designed around YOUR aesthetic. send us ur mood board and watch the magic happen ✨</p>
+                <div style="background: linear-gradient(45deg, #FF6B9D, #C44569); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; font-weight: 700; margin-top: 1rem; display: inline-block;">AED 70-80</div>
+            </div>
+            <div class="card">
+                <span class="card-emoji">🌸</span>
+                <h3 class="card-title">made-to-order magic</h3>
+                <p class="card-text">bring ur pinterest board to life! we'll create something that's so you, people will think it was made in ur dreams</p>
+                <div style="background: linear-gradient(45deg, #FF6B9D, #C44569); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; font-weight: 700; margin-top: 1rem; display: inline-block;">let's chat! 💕</div>
+            </div>
+            <div class="card">
+                <span class="card-emoji">🦋</span>
+                <h3 class="card-title">coming soon besties</h3>
+                <p class="card-text">bag chains that serve looks, anklets for hot girl walks, and even cute accessories for ur fur babies! 🐾</p>
+                <div style="background: linear-gradient(45deg, #FF6B9D, #C44569); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; font-weight: 700; margin-top: 1rem; display: inline-block;">stay tuned ✨</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">recent faves 📸</h2>
+        <p class="section-subtitle">pieces our besties are absolutely obsessed with rn</p>
+        <div class="cards-grid">
+            <div class="card showcase-item">
+                <div class="placeholder-img gradient-1">
+                    <span class="img-emoji">✨💎</span>
+                </div>
+                <div class="showcase-info">
+                    <h4 class="card-title">dreamy ear stack 🌙</h4>
+                    <p class="card-text">layered ear cuffs that hit different</p>
+                    <span class="showcase-vibe">#ethereal #layered #maincharacter</span>
+                </div>
+            </div>
+            
+            <div class="card showcase-item">
+                <div class="placeholder-img gradient-2">
+                    <span class="img-emoji">🦋🌸</span>
+                </div>
+                <div class="showcase-info">
+                    <h4 class="card-title">festival ready 🌈</h4>
+                    <p class="card-text">body chain that's pure summer magic</p>
+                    <span class="showcase-vibe">#festival #butterfly #summerbody</span>
+                </div>
+            </div>
+            
+            <div class="card showcase-item">
+                <div class="placeholder-img gradient-3">
+                    <span class="img-emoji">🌟💫</span>
+                </div>
+                <div class="showcase-info">
+                    <h4 class="card-title">celestial vibes ⭐</h4>
+                    <p class="card-text">wrist candy that's literally stellar</p>
+                    <span class="showcase-vibe">#celestial #stargirl #witchy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title" style="color: white;">let's be besties 💕</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">slide into our DMs and let's create something magical</p>
+        <div class="cards-grid">
+            <div style="background: rgba(255, 255, 255, 0.15); border-radius: 25px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">📱</span>
+                <h3>dm us ur vibes</h3>
+                <p>send us ur mood board, inspo pics, or just tell us what ur feeling - we got u!</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.15); border-radius: 25px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">💌</span>
+                <h3>fast replies</h3>
+                <p>we're always online and ready to chat about ur next statement piece</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.15); border-radius: 25px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">✨</span>
+                <h3>quick turnaround</h3>
+                <p>from concept to ur doorstep in record time - because we know u can't wait to serve looks</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">made with love and good vibes ✨</p>
+        <div class="social-emojis">💕 🌸 ✨ 🦋 🌙</div>
+        <p style="color: #C44569; margin-top: 1rem; font-weight: 500;">honey gloss 2025 - ur jewelry bestie 🍯</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Random floating emojis
+        function createFloatingEmoji() {
+            const emojis = ['✨', '🌸', '🦋', '💫', '🌙', '⭐', '💕', '🌈'];
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.cssText = `position: fixed; left: ${Math.random() * 100}vw; bottom: -50px; font-size: 2rem; opacity: 0.7; z-index: -1; pointer-events: none; animation: floatUp 8s linear forwards;`;
+            document.body.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 8000);
+        }
+
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `@keyframes floatUp { to { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }`;
+        document.head.appendChild(style);
+
+        // Create floating emojis periodically
+        setInterval(createFloatingEmoji, 3000);
+    </script>
+</body>
+</html>
