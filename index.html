@@ -3,444 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>honey gloss ✨ ur main character moment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Honey Gloss ✨ Y2K Cyber Jewelry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.2) 0%, rgba(255, 218, 185, 0.2) 25%, rgba(221, 160, 221, 0.2) 50%, rgba(173, 216, 230, 0.2) 75%, rgba(255, 192, 203, 0.2) 100%);
-            min-height: 100vh;
+        :root {
+            --chrome-pink: #E91E63;
+            --hot-pink: #FF1493;
+            --neon-pink: #FF69B4;
+            --cyber-black: #000000;
+            --pure-white: #ffffff;
+            --chrome-gradient: linear-gradient(145deg, #E91E63, #FF1493, #FF69B4);
+            --holographic: linear-gradient(45deg, #E91E63, #00ffff, #FF1493, #9400d3, #FF69B4);
         }
 
-        /* Chunky beads background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cyber-black);
+            color: var(--pure-white);
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><circle cx="8" cy="8" r="6" fill="%23E91E63" opacity="0.8"/><circle cx="8" cy="8" r="2" fill="white"/></svg>'), auto;
+        }
+
         body::before {
             content: '';
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: 
-              radial-gradient(circle at 10% 20%, #FFB6C1 0%, transparent 20%),
-              radial-gradient(circle at 80% 30%, #FFE4B5 0%, transparent 18%),
-              radial-gradient(circle at 40% 70%, #DDA0DD 0%, transparent 22%),
-              radial-gradient(circle at 90% 60%, #ADD8E6 0%, transparent 19%),
-              radial-gradient(circle at 20% 80%, #FFC0CB 0%, transparent 21%);
-            background-size: 150px 150px, 120px 120px, 180px 180px, 140px 140px, 160px 160px;
-            opacity: 0.6; z-index: -1;
-            animation: floatBeads 20s ease-in-out infinite;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(233, 30, 99, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><circle cx="2" cy="2" r="1" fill="%23E91E63" opacity="0.1"/></svg>');
+            background-size: 100% 100%, 100% 100%, 20px 20px;
+            z-index: -2;
+            animation: shimmer 6s ease-in-out infinite alternate;
         }
-        
-        @keyframes floatBeads {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+        @keyframes shimmer { 0% { opacity: 0.3; } 100% { opacity: 0.7; } }
+
+        .sparkle {
+            position: fixed; pointer-events: none; z-index: 1000;
+            font-size: 14px; color: var(--chrome-pink);
+            text-shadow: 0 0 10px var(--chrome-pink);
+            animation: sparkleFloat 4s ease-in-out infinite;
+        }
+        @keyframes sparkleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.3; }
         }
 
-        /* Navigation */
-        nav {
+        header {
             position: fixed; top: 0; width: 100%;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 182, 193, 0.3);
-            z-index: 1000;
+            border-bottom: 2px solid var(--chrome-pink);
+            z-index: 100;
+            box-shadow: 0 0 40px rgba(233, 30, 99, 0.3);
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1400px; margin: 0 auto;
         }
 
-        .logo {
-            font-family: 'Caveat', cursive;
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #FF6B9D, #C44569, #F8B500, #FF9FF3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .logo-image {
+            width: 180px; height: auto;
+            filter: drop-shadow(0 0 20px rgba(233, 30, 99, 0.6));
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes logoGlow {
+            from { filter: drop-shadow(0 0 15px rgba(233, 30, 99, 0.6)); }
+            to { filter: drop-shadow(0 0 30px rgba(233, 30, 99, 0.9)); }
         }
 
-        .nav-emoji {
-            font-size: 1.8rem;
-            animation: bounce 2s ease-in-out infinite;
+        .nav-links {
+            display: flex; list-style: none; gap: 35px;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+        .nav-links a {
+            color: var(--pure-white); text-decoration: none;
+            font-weight: 600; padding: 12px 20px; border-radius: 25px;
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(233, 30, 99, 0.3);
         }
 
-        /* Hero Section */
+        .nav-links a::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--chrome-gradient);
+            transition: left 0.4s ease; z-index: -1;
+        }
+
+        .nav-links a:hover::before { left: 0; }
+        .nav-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
+            border-color: var(--chrome-pink);
+        }
+
+        main { margin-top: 100px; }
+
         .hero {
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center;
-            position: relative;
-            padding: 2rem;
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            position: relative; overflow: hidden;
         }
 
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.8;
+        .hero::before {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(233, 30, 99, 0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: rotate 15s linear infinite; z-index: -1;
         }
+        @keyframes rotate { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
 
-        .floating-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
-        .floating-icon:nth-child(2) { top: 25%; right: 15%; animation-delay: 1s; }
-        .floating-icon:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-            50% { transform: translateY(-20px) rotate(5deg) scale(1.05); }
+        .hero-logo {
+            width: 350px; height: auto; margin-bottom: 40px;
+            filter: drop-shadow(0 0 40px rgba(233, 30, 99, 0.8));
+            animation: heroLogoFloat 4s ease-in-out infinite alternate;
+            z-index: 2; position: relative;
+        }
+        @keyframes heroLogoFloat {
+            from { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 30px rgba(233, 30, 99, 0.7)); }
+            to { transform: translateY(-10px) scale(1.02); filter: drop-shadow(0 0 50px rgba(233, 30, 99, 1)); }
         }
 
         .hero h1 {
-            font-family: 'Caveat', cursive;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #FF6B9D, #4ECDC4, #45B7D1, #96CEB4, #FFEAA7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGlow 3s ease-in-out infinite alternate;
+            font-family: 'Orbitron', monospace; font-size: 3rem; font-weight: 700;
+            margin-bottom: 25px; background: var(--holographic);
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(233, 30, 99, 0.6);
+            animation: textShimmer 4s ease-in-out infinite alternate;
+            position: relative; z-index: 2;
+        }
+        @keyframes textShimmer {
+            from { filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.6)); }
+            to { filter: drop-shadow(0 0 25px rgba(233, 30, 99, 0.9)); }
         }
 
-        @keyframes textGlow {
-            0% { filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.3)); }
-            100% { filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.6)); }
-        }
-
-        .tagline {
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            margin-bottom: 2rem;
-            color: #8B5A3C;
-            font-weight: 600;
+        .hero p {
+            font-size: 1.4rem; margin-bottom: 35px; color: var(--neon-pink);
+            font-weight: 500; position: relative; z-index: 2;
+            text-shadow: 0 0 15px rgba(233, 30, 99, 0.4);
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 18px 35px;
-            background: linear-gradient(135deg, #FF9A9E, #FECFEF);
-            border: none; border-radius: 50px;
-            color: #8B5A3C;
-            text-decoration: none;
-            font-weight: 700; font-size: 1.1rem;
-            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.4);
-            transition: all 0.3s ease;
+            background: var(--chrome-gradient); border: none;
+            padding: 20px 45px; font-size: 1.2rem; font-weight: 700;
+            border-radius: 50px; color: white; cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 10px 20px rgba(233, 30, 99, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+            text-transform: uppercase; letter-spacing: 2px;
+            position: relative; overflow: hidden; z-index: 2;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
+        .cta-button::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before { left: 100%; }
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(255, 154, 158, 0.6);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(233, 30, 99, 0.7),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3);
         }
 
-        /* Section Styling */
         .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 120px 50px; text-align: center;
         }
 
-        .section-title {
-            font-family: 'Caveat', cursive;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            background: linear-gradient(45deg, #FF6B9D, #C44569, #F8B500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-            margin-bottom: 1rem;
+        .section h2 {
+            font-family: 'Orbitron', monospace; font-size: 2.8rem; font-weight: 700;
+            margin-bottom: 70px; background: var(--holographic);
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
         }
 
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #8B5A3C;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        /* Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px; max-width: 1200px; margin: 0 auto;
         }
 
         .card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 245, 0.8));
-            border-radius: 25px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 182, 193, 0.3);
-            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.15);
-            transition: all 0.3s ease;
-            position: relative;
+            background: linear-gradient(145deg, rgba(233, 30, 99, 0.1), rgba(0, 0, 0, 0.3));
+            border: 2px solid rgba(233, 30, 99, 0.4);
+            border-radius: 25px; padding: 45px 35px;
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
+        .card::before {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(233, 30, 99, 0.2), transparent);
+            animation: rotate 6s linear infinite; opacity: 0; transition: opacity 0.4s ease;
+        }
+
+        .card:hover::before { opacity: 1; }
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.25);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(233, 30, 99, 0.4);
+            border-color: var(--chrome-pink);
+            background: linear-gradient(145deg, rgba(233, 30, 99, 0.15), rgba(0, 0, 0, 0.4));
         }
 
-        .card-emoji {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-            animation: wiggle 3s ease-in-out infinite;
+        .card-icon {
+            font-size: 3.5rem; margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px var(--chrome-pink));
         }
 
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            75% { transform: rotate(-5deg); }
+        .card h3 {
+            font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 600;
+            margin-bottom: 20px; color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
         }
 
-        .card-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #C44569;
-            margin-bottom: 1rem;
+        .card p {
+            font-size: 1.1rem; line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .card-text {
-            color: #8B5A3C;
-            line-height: 1.6;
+        .products {
+            background: linear-gradient(180deg, rgba(233, 30, 99, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
         }
 
-        /* Showcase Styles */
-        .showcase-item {
-            position: relative;
-            height: 280px;
-            overflow: hidden;
+        .product-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px; max-width: 1100px; margin: 0 auto;
         }
 
-        .placeholder-img {
-            width: 100%; height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease-in-out infinite;
+        .product-card {
+            background: linear-gradient(145deg, rgba(233, 30, 99, 0.15), rgba(0, 0, 0, 0.6));
+            border: 2px solid rgba(233, 30, 99, 0.4);
+            border-radius: 20px; padding: 35px 25px; text-align: center;
+            transition: all 0.4s ease; position: relative;
+            backdrop-filter: blur(10px);
         }
 
-        .gradient-1 { background: linear-gradient(-45deg, #FFB6C1, #FFE4E1, #E6E6FA, #F0E68C); }
-        .gradient-2 { background: linear-gradient(-45deg, #FFE4E1, #DDA0DD, #98FB98, #F0E68C); }
-        .gradient-3 { background: linear-gradient(-45deg, #E6E6FA, #FFB6C1, #F0E68C, #98FB98); }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.5);
+            border-color: var(--chrome-pink);
         }
 
-        .img-emoji {
-            font-size: 4rem;
-            animation: floatEmoji 3s ease-in-out infinite;
+        .product-emoji {
+            font-size: 3rem; margin-bottom: 20px; display: block;
+            filter: drop-shadow(0 0 10px var(--chrome-pink));
         }
 
-        @keyframes floatEmoji {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(5deg); }
+        .product-card h3 {
+            font-family: 'Orbitron', monospace; font-size: 1.3rem; font-weight: 600;
+            margin-bottom: 15px; color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
         }
 
-        .showcase-info {
-            padding: 1.5rem;
+        .product-card p {
+            font-size: 1rem; color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px; line-height: 1.5;
         }
 
-        .showcase-vibe {
-            display: inline-block;
-            background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
-            color: #C44569;
-            padding: 0.4rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(255, 107, 157, 0.2);
+        .price {
+            font-size: 1.2rem; font-weight: 700; color: var(--chrome-pink);
+            text-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
         }
 
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 40px;
-            padding: 4rem 2rem;
-            color: white;
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        /* Footer */
         footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, var(--cyber-black) 100%);
+            border-top: 3px solid var(--chrome-pink);
+            padding: 70px 50px 40px; text-align: center;
+        }
+
+        .footer-logo {
+            width: 200px; height: auto; margin: 0 auto 30px;
+            filter: drop-shadow(0 0 20px rgba(233, 30, 99, 0.6));
+        }
+
+        .social-links {
+            display: flex; justify-content: center; gap: 35px; margin-bottom: 35px;
+        }
+
+        .social-links a {
+            color: var(--neon-pink); font-size: 1.8rem;
+            transition: all 0.4s ease; padding: 10px; border-radius: 50%;
+            border: 2px solid rgba(233, 30, 99, 0.3);
+        }
+
+        .social-links a:hover {
+            color: var(--chrome-pink);
+            transform: translateY(-5px) scale(1.15);
+            filter: drop-shadow(0 8px 15px rgba(233, 30, 99, 0.5));
+            border-color: var(--chrome-pink);
         }
 
         .footer-text {
-            font-family: 'Caveat', cursive;
-            font-size: 1.5rem;
-            color: #C44569;
-            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem; line-height: 1.6;
         }
 
-        .social-emojis {
-            font-size: 2rem;
-            letter-spacing: 1rem;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        /* Mobile */
         @media (max-width: 768px) {
-            .hero { padding: 6rem 1rem 4rem; }
-            .section { padding: 3rem 1rem; }
-            .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .hero-logo { width: 250px; }
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { gap: 20px; }
+            .nav-links a { padding: 8px 15px; font-size: 0.9rem; }
+            .grid, .product-grid { grid-template-columns: 1fr; gap: 25px; }
+            .section { padding: 80px 30px; }
+            .logo-image { width: 140px; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">honey gloss</div>
-            <div class="nav-emoji">🍯✨</div>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <div class="floating-icon">🐰</div>
-        <div class="floating-icon">🌞</div>
-        <div class="floating-icon">🦋</div>
-        
-        <div>
-            <h1>ur main character era starts here ✨</h1>
-            <p class="tagline">custom jewelry that hits different 🌸💫</p>
-            <a href="#contact" class="cta-button">let's create magic together 🪩</a>
-        </div>
-    </section>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img class="logo-image" src="https://i.imgur.com/loz5DGj.png" alt="Honey Gloss Logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">💎 Home</a></li>
+                <li><a href="#shop">🛍️ Shop</a></li>
+                <li><a href="#custom">⭐ Custom</a></li>
+                <li><a href="#about">💖 About</a></li>
+                <li><a href="#contact">📱 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="section">
-        <h2 class="section-title">why we're obsessed 🤍</h2>
-        <p class="section-subtitle">it's giving main character energy fr</p>
-        <div class="cards-grid">
-            <div class="card">
-                <span class="card-emoji">🎨</span>
-                <h3 class="card-title">made just for u</h3>
-                <p class="card-text">every piece is custom-crafted to match your exact vibe and aesthetic. no basic jewelry here bestie!</p>
-            </div>
-            <div class="card">
-                <span class="card-emoji">✨</span>
-                <h3 class="card-title">trendy af</h3>
-                <p class="card-text">we stay on top of all the latest jewelry trends so ur always serving looks that everyone's gonna be asking about</p>
-            </div>
-            <div class="card">
-                <span class="card-emoji">💫</span>
-                <h3 class="card-title">confidence boost</h3>
-                <p class="card-text">transform any basic fit into something that screams "that girl energy" - ur gonna feel unstoppable</p>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="hero" id="home">
+            <img class="hero-logo" src="https://i.imgur.com/loz5DGj.png" alt="Honey Gloss" />
+            <h1>CYBER GLAM ✨</h1>
+            <p>Y2K jewelry that serves LOOKS, not basic 💎</p>
+            <p>Custom pieces for your main character energy 🌟</p>
+            <button class="cta-button">Shop The Vibe ✨</button>
+        </section>
 
-    <section class="section">
-        <h2 class="section-title">the collection 💎</h2>
-        <p class="section-subtitle">pieces that are about to become ur signature look</p>
-        <div class="cards-grid">
-            <div class="card">
-                <span class="card-emoji">💎</span>
-                <h3 class="card-title">custom body jewelry</h3>
-                <p class="card-text">unique pieces designed around YOUR aesthetic. send us ur mood board and watch the magic happen ✨</p>
-                <div style="background: linear-gradient(45deg, #FF6B9D, #C44569); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; font-weight: 700; margin-top: 1rem; display: inline-block;">AED 70-80</div>
+        <section class="section">
+            <h2>Why We Hit Different 💫</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Custom to YOUR Aesthetic</h3>
+                    <p>Send us your mood board, Pinterest inspo, or just tell us the vibe - we'll create jewelry that's uniquely YOU ✨</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💎</div>
+                    <h3>Handmade in Dubai</h3>
+                    <p>Each piece is crafted with love and precision in the heart of the UAE. Quality that lasts, style that slays 🏙️</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Bold & Unapologetic</h3>
+                    <p>No basic, minimal jewelry here. We're all about statement pieces that turn heads and start conversations ⚡</p>
+                </div>
             </div>
-            <div class="card">
-                <span class="card-emoji">🌸</span>
-                <h3 class="card-title">made-to-order magic</h3>
-                <p class="card-text">bring ur pinterest board to life! we'll create something that's so you, people will think it was made in ur dreams</p>
-                <div style="background: linear-gradient(45deg, #FF6B9D, #C44569); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; font-weight: 700; margin-top: 1rem; display: inline-block;">let's chat! 💕</div>
-            </div>
-            <div class="card">
-                <span class="card-emoji">🦋</span>
-                <h3 class="card-title">coming soon besties</h3>
-                <p class="card-text">bag chains that serve looks, anklets for hot girl walks, and even cute accessories for ur fur babies! 🐾</p>
-                <div style="background: linear-gradient(45deg, #FF6B9D, #C44569); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; font-weight: 700; margin-top: 1rem; display: inline-block;">stay tuned ✨</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section">
-        <h2 class="section-title">recent faves 📸</h2>
-        <p class="section-subtitle">pieces our besties are absolutely obsessed with rn</p>
-        <div class="cards-grid">
-            <div class="card showcase-item">
-                <div class="placeholder-img gradient-1">
-                    <span class="img-emoji">✨💎</span>
+        <section class="section products">
+            <h2>The Collection That Understands The Assignment 💅</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="product-emoji">💎</span>
+                    <h3>Body Jewelry</h3>
+                    <p>Belly chains, body chains, and statement pieces that make every outfit serve</p>
+                    <div class="price">70-80 AED</div>
                 </div>
-                <div class="showcase-info">
-                    <h4 class="card-title">dreamy ear stack 🌙</h4>
-                    <p class="card-text">layered ear cuffs that hit different</p>
-                    <span class="showcase-vibe">#ethereal #layered #maincharacter</span>
+                <div class="product-card">
+                    <span class="product-emoji">⭐</span>
+                    <h3>Custom Pieces</h3>
+                    <p>Made-to-order jewelry based on your aesthetic and mood board</p>
+                    <div class="price">Starting 70 AED</div>
                 </div>
-            </div>
-            
-            <div class="card showcase-item">
-                <div class="placeholder-img gradient-2">
-                    <span class="img-emoji">🦋🌸</span>
+                <div class="product-card">
+                    <span class="product-emoji">👑</span>
+                    <h3>Statement Accessories</h3>
+                    <p>Bold pieces that transform basic outfits into main character moments</p>
+                    <div class="price">70-80 AED</div>
                 </div>
-                <div class="showcase-info">
-                    <h4 class="card-title">festival ready 🌈</h4>
-                    <p class="card-text">body chain that's pure summer magic</p>
-                    <span class="showcase-vibe">#festival #butterfly #summerbody</span>
-                </div>
-            </div>
-            
-            <div class="card showcase-item">
-                <div class="placeholder-img gradient-3">
-                    <span class="img-emoji">🌟💫</span>
-                </div>
-                <div class="showcase-info">
-                    <h4 class="card-title">celestial vibes ⭐</h4>
-                    <p class="card-text">wrist candy that's literally stellar</p>
-                    <span class="showcase-vibe">#celestial #stargirl #witchy</span>
+                <div class="product-card">
+                    <span class="product-emoji">✨</span>
+                    <h3>Coming Soon</h3>
+                    <p>Bag chains, anklets, and pet accessories - because even your fur baby needs to serve looks</p>
+                    <div class="price">Stay Tuned 💫</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="section-title" style="color: white;">let's be besties 💕</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">slide into our DMs and let's create something magical</p>
-        <div class="cards-grid">
-            <div style="background: rgba(255, 255, 255, 0.15); border-radius: 25px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
-                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">📱</span>
-                <h3>dm us ur vibes</h3>
-                <p>send us ur mood board, inspo pics, or just tell us what ur feeling - we got u!</p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.15); border-radius: 25px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
-                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">💌</span>
-                <h3>fast replies</h3>
-                <p>we're always online and ready to chat about ur next statement piece</p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.15); border-radius: 25px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
-                <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">✨</span>
-                <h3>quick turnaround</h3>
-                <p>from concept to ur doorstep in record time - because we know u can't wait to serve looks</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p class="footer-text">made with love and good vibes ✨</p>
-        <div class="social-emojis">💕 🌸 ✨ 🦋 🌙</div>
-        <p style="color: #C44569; margin-top: 1rem; font-weight: 500;">honey gloss 2025 - ur jewelry bestie 🍯</p>
+        <div class="footer-content">
+            <img class="footer-logo" src="https://i.imgur.com/loz5DGj.png" alt="Honey Gloss" />
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">💌</a>
+                <a href="#">✨</a>
+            </div>
+            <p class="footer-text">
+                Serving cyber glam from Dubai, UAE 🏙️<br>
+                Custom jewelry that hits different ✨
+            </p>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.8) createSparkle(e.clientX, e.clientY);
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = (x - 10) + 'px';
+            sparkle.style.top = (y - 10) + 'px';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -451,23 +440,13 @@
             });
         });
 
-        // Random floating emojis
-        function createFloatingEmoji() {
-            const emojis = ['✨', '🌸', '🦋', '💫', '🌙', '⭐', '💕', '🌈'];
-            const emoji = document.createElement('div');
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.cssText = `position: fixed; left: ${Math.random() * 100}vw; bottom: -50px; font-size: 2rem; opacity: 0.7; z-index: -1; pointer-events: none; animation: floatUp 8s linear forwards;`;
-            document.body.appendChild(emoji);
-            setTimeout(() => emoji.remove(), 8000);
-        }
-
-        // Add floating animation
-        const style = document.createElement('style');
-        style.textContent = `@keyframes floatUp { to { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }`;
-        document.head.appendChild(style);
-
-        // Create floating emojis periodically
-        setInterval(createFloatingEmoji, 3000);
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                createSparkle(x, y);
+            }
+        }, 2000);
     </script>
 </body>
 </html>
